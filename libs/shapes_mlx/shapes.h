@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update.c                                           :+:      :+:    :+:   */
+/*   shapes.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cascrizz <cascrizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 00:13:51 by cascrizz          #+#    #+#             */
-/*   Updated: 2026/01/16 01:13:03 by cascrizz         ###   ########.fr       */
+/*   Created: 2026/01/16 00:34:27 by cascrizz          #+#    #+#             */
+/*   Updated: 2026/01/16 00:34:27 by cascrizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libg.h"
+#ifndef SHAPES_H
+# define SHAPES_H
 
-void update(t_game *gamedata)
-{
+#include "../images_mlx/images.h"
 
-}
+typedef struct s_rect{
+	int		x;
+	int		y;
+	int		height;
+	int		width;
+	void	(*display_object)(struct s_rect rect, t_image buffer);
+} t_rect;
 
-void display(t_game *gamedata)
-{
-	t_list *lst = gamedata->objects;
-    while (lst != NULL)
-	{
-		lst->content->display_object(lst->content);
-		lst = lst->next;
-	}
-	mlx_put_image_to_window(gamedata->mlx, gamedata->win, gamedata->buffer, 0, 0);
-	printf("displayed\n");
-}
+void	draw_rect(t_rect rect, t_image buffer);
+
+#endif
