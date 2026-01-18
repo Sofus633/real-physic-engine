@@ -6,7 +6,7 @@
 /*   By: cascrizz <cascrizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 00:13:38 by cascrizz          #+#    #+#             */
-/*   Updated: 2026/01/16 00:50:51 by cascrizz         ###   ########.fr       */
+/*   Updated: 2026/01/18 19:51:53 by cascrizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 #define SCREEN_SIZEY 800
 
 #include <stddef.h>
-# include "../libs/mlx_linux/mlx.h"
 #include "../libs/llist/ft_list.h"
 #include "../libs/images_mlx/images.h"
-#include "../libs/shapes_mlx/shapes.h"
+#include "../libs/object_mlx/objects.h"
 #include <sys/time.h>
+#include <stdio.h>//TO REMOVE
 
 typedef struct s_game
 {

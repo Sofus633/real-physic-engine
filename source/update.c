@@ -6,7 +6,7 @@
 /*   By: cascrizz <cascrizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 00:13:51 by cascrizz          #+#    #+#             */
-/*   Updated: 2026/01/16 01:13:03 by cascrizz         ###   ########.fr       */
+/*   Updated: 2026/01/18 19:55:56 by cascrizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ void display(t_game *gamedata)
 	t_list *lst = gamedata->objects;
     while (lst != NULL)
 	{
-		lst->content->display_object(lst->content);
+		((t_object *)(lst->content))->display_object((*(t_object *)(lst->content)), gamedata->buffer);
 		lst = lst->next;
 	}
-	mlx_put_image_to_window(gamedata->mlx, gamedata->win, gamedata->buffer, 0, 0);
-	printf("displayed\n");
+	mlx_put_image_to_window(gamedata->mlx, gamedata->win, gamedata->buffer->img, 0, 0);
 }

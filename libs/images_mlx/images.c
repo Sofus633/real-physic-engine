@@ -6,20 +6,20 @@
 /*   By: cascrizz <cascrizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 00:13:56 by cascrizz          #+#    #+#             */
-/*   Updated: 2026/01/16 00:25:18 by cascrizz         ###   ########.fr       */
+/*   Updated: 2026/01/18 13:28:05 by cascrizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "imqges.h"
+#include "images.h"
 
-void	my_mlx_pixel_put(image *image, int x, int y, int color)
+void	my_mlx_pixel_put(t_image *image, int x, int y, int color)
 {
 	char	*dst;
 	dst = image->data + (y * image->size_line + x * (image->bpp / 8));
 	*(unsigned int*)dst = color;
 }
 
-char	*my_mlx_pixel_get(image *image, int x, int y)
+char	*my_mlx_pixel_get(t_image *image, int x, int y)
 {
 	char	*dst;
 

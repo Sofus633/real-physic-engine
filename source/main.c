@@ -6,7 +6,7 @@
 /*   By: cascrizz <cascrizz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 00:13:30 by cascrizz          #+#    #+#             */
-/*   Updated: 2026/01/16 01:00:22 by cascrizz         ###   ########.fr       */
+/*   Updated: 2026/01/18 19:43:13 by cascrizz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int main()
 {
 	t_game gamedata;
 	set_default_gamedata(&gamedata);
-	mlx_loop_hook(gamedata.mlx , &loop, NULL);
+	mlx_loop_hook(gamedata.mlx , &loop, &gamedata);
+	mlx_loop(gamedata.mlx);
 }

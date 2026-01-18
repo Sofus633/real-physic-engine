@@ -6,7 +6,7 @@ UTILS = ./utils
 SRC = $(SOURCE)/main.c $(SOURCE)/preproces.c  $(SOURCE)/update.c \
 	  $(LIBS)/llist/ft_lstfunc.c $(LIBS)/llist/lst_add.c $(LIBS)/llist/lst_map.c\
  	  $(LIBS)/images_mlx/images.c \
-	  $(LIBS)/shapes_mlx/shapes.c
+	  $(LIBS)/object_mlx/object.c
 
 
 OBJ = $(SRC:.c=.o)
