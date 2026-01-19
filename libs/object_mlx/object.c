@@ -33,3 +33,10 @@ t_object *create_new_object(t_vector2 pos, t_vector2 size, int shape_type)
 	}
 	return (new_obj);
 }
+
+t_object *free_object(t_object *obj)
+{
+	t_object *new_obj;
+
+	free(obj);
+}
