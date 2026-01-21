@@ -18,6 +18,34 @@ void	draw_rect(t_object obj, t_image *buffer)
 	}
 }
 
+int rect_collition(t_object *obj, t_vector2 *new_pos, t_game *gamedata)
+{
+    t_list *lst;
+    t_object *b;
+
+    lst = gamedata->objects;
+    while (lst != NULL)
+    {
+        b = lst->content;
+
+        if (b == obj)
+        {
+            lst = lst->next;
+            continue;
+        }
+
+        if (new_pos->x < b->pos.x + b->size.x &&
+            new_pos->x + obj->size.x > b->pos.x &&
+            new_pos->y < b->pos.y + b->size.y &&
+            new_pos->y + obj->size.y > b->pos.y)
+            return (1);
+
+        lst = lst->next;
+    }
+    return (0);
+}
+
+
 void update_obj(t_object *obj, t_game *gamedata)
 {
   t_vector2 new_pos;
@@ -31,6 +59,12 @@ void update_obj(t_object *obj, t_game *gamedata)
   if (new_pos.y < 0 || new_pos.y > gamedata->win_height - obj->size.y)
   {
     new_pos.y = obj->pos.y;
+  }
+  //collisions
+  if (rect_collition(obj, &new_pos, gamedata))
+  {
+	new_pos.x = obj->pos.x;
+	new_pos.y = obj->pos.y;
   }
 
   obj->velocity = scal_mul_vector2(obj->velocity, FRICTION);
