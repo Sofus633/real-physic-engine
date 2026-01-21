@@ -17,4 +17,6 @@ t_vector2 div_vector2(t_vector2 v1, t_vector2 v2);
 t_vector2 mul_vector2(t_vector2 v1, t_vector2 v2);
 t_vector2 add_vector2(t_vector2 v1, t_vector2 v2);
 t_vector2 sub_vector2(t_vector2 v1, t_vector2 v2);
+t_vector2 scal_mul_vector2(t_vector2 v1, double scal);
+
 #endif

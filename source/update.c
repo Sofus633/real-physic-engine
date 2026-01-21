@@ -14,13 +14,20 @@
 
 void update(t_game *gamedata)
 {
-
+	t_list *lst = gamedata->objects;
+  while (lst != NULL)
+	{
+		((t_object *)(lst->content))->update_object(((t_object *)(lst->content)), gamedata);
+		lst = lst->next;
+	}
 }
 
 void display(t_game *gamedata)
 {
-	t_list *lst = gamedata->objects;
-    while (lst != NULL)
+
+  clear_image(gamedata->buffer); 
+  t_list *lst = gamedata->objects;
+  while (lst != NULL)
 	{
 		((t_object *)(lst->content))->display_object((*(t_object *)(lst->content)), gamedata->buffer);
 		lst = lst->next;

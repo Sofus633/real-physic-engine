@@ -35,7 +35,7 @@ t_vector2 mul_vector2(t_vector2 v1, t_vector2 v2)
   return ((t_vector2){v1.x * v2.x, v1.y * v2.y});
 }
 
-t_vector2 scal_mul_vector2(t_vector2 v1, int scal)
+t_vector2 scal_mul_vector2(t_vector2 v1, double scal)
 {
   return ((t_vector2){v1.x * scal, v1.y * scal});
 }

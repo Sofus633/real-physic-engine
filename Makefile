@@ -3,10 +3,11 @@ EXTERNAL_LIB = -lm
 SOURCE = ./source
 LIBS = ./libs
 UTILS = ./utils
-SRC = $(SOURCE)/main.c $(SOURCE)/preproces.c  $(SOURCE)/update.c \
+SRC = $(SOURCE)/main.c $(SOURCE)/preproces.c  $(SOURCE)/update.c $(SOURCE)/handle_key.c \
 	  $(LIBS)/llist/ft_lstfunc.c $(LIBS)/llist/lst_add.c $(LIBS)/llist/lst_map.c\
  	  $(LIBS)/images_mlx/images.c \
-	  $(LIBS)/object_mlx/object.c
+	  $(LIBS)/object_mlx/object.c \
+		$(LIBS)/vectors/vector2_operations.c
 
 
 OBJ = $(SRC:.c=.o)
